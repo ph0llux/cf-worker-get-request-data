@@ -1,0 +1,17 @@
+[package]
+name = "cf-worker-get-request-data"
+version = "0.1.0"
+authors = ["ph0llux <ph0llux@pm.me>"]
+edition = "2021"
+#rust-version = "1.60"
+license = "MIT OR Apache-2.0"
+
+[lib]
+crate-type = ["cdylib", "rlib"]
+
+[dependencies]
+worker = "0.0.12"
+
+[profile.release]
+# Tell `rustc` to optimize for small code size.
+opt-level = "s"
