@@ -7,7 +7,7 @@ pub async fn main(req: Request, env: Env, _ctx: worker::Context) -> Result<Respo
     let router = Router::new();
     router
         .get_async("/", |_req, _ctx| async move {
-            Response::ok(INDEX_HTML)
+            Response::from_html(INDEX_HTML)
         })
         .get_async("/ip", |req, _ctx| async move {
             client_ip(&req).await
